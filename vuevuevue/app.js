@@ -1,7 +1,8 @@
 const app = Vue.createApp({
     data() {
         return {
-            tujuanNya: 'Paham dan bisa vue!!',
+            tujuanNyaA: 'Paham vue!!',
+            tujuanNyaB: 'Bisa vue!!',
             vueLink: 'https://vuejs.org/'
         };
     },
@@ -9,9 +10,9 @@ const app = Vue.createApp({
         tujuanAkhir() {
             const nomerAcak = Math.random();
             if (nomerAcak < 0.5) {
-                return 'Belajar Vue!';
+                return this.tujuanNyaA;
             } else {
-                return 'Jago Vue!';         
+                return this.tujuanNyaB;         
             }
         }
     }
