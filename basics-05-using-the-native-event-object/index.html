@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="https://unpkg.com/vue@3" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -21,8 +21,11 @@
       <button v-on:click="add(10)">Add 10</button>
       <button v-on:click="reduce(5)">Subtract 5</button>
       <p>Result: {{ counter }}</p>
-      <input type="text" v-on:input="setName($event, 'Schwarzmüller')">
-      <p>Your Name: {{ name }}</p>
+      <!-- <input type="text" v-bind:value="name" v-on:input="setName($event)"> -->
+      <!-- two way binding is communicate with two directions -->
+      <input type="text" v-model="name"> <!-- is same as above this two way binding -->
+      <button v-on:click="resetInput">Reset Input</button>
+      <p>Your Name: {{ fullname }}</p>
     </section>
   </body>
 </html>
